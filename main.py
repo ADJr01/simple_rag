@@ -1,5 +1,5 @@
-def main():
-    print("Hello from simple-rag!")
+from modules.module_controller import main
+
 
 
 if __name__ == "__main__":
