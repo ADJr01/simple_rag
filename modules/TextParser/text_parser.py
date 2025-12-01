@@ -5,6 +5,7 @@ from langchain_ollama import OllamaEmbeddings,ChatOllama
 from langchain_core.documents import Document
 
 class TextParser:
+
     def __init__(self):
         self.file_paths = None          # can be a single file OR directory
         self.mode = None                # "single" or "directory"
