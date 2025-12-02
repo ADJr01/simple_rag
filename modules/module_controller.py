@@ -8,8 +8,11 @@ storage_dir = '/home/ad/Desktop/Project/simple_rag/modules/storage/'
 chroma_persist = '/home/ad/Desktop/Project/simple_rag/modules/db/'
 collection_name = 'rag_memory'
 
-def main():
+def load_storage():
     text_parser = TextParser()
     text_parser.load_from(storage_dir,True)
-    t = text_parser.process()
+    return text_parser.process()
+
+def main():
+    load_storage()
 
