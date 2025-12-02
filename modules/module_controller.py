@@ -1,8 +1,10 @@
-from modules.TextParser import text_parser
+from modules.Parsers.text_parser import TextParser
 from langchain_community.vectorstores import chroma
-
-parse_dir = '/home/ad/Desktop/Project/simple_rag/modules/storage/'
+storage_dir = '/home/ad/Desktop/Project/simple_rag/modules/storage/'
 collection_name = 'rag_memory'
 
 def main():
-    text_parser =
+    text_parser = TextParser()
+    text_parser.load_from(storage_dir,True)
+    t = text_parser.process()
+    print(t)
