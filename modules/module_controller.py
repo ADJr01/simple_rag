@@ -24,9 +24,14 @@ def get_vector_store(documents,embeddings,collection_name,persist_dir):
         persist_dir=persist_dir,
     )
 
+
+
 def main():
     docs = load_storage()
     vector_store = get_vector_store(documents=docs,embeddings=get_embeddings(),collection_name=collection_name,persist_dir=chroma_persist)
-
+    # setting up RAG
+    retrival = vector_store.as_retriever(
+        search_kwargs={"k":2},
+    )
 
 
